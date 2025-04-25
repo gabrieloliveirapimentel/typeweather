@@ -153,7 +153,7 @@ export default function SelectCity({ goTo }: SelectCityProps) {
         <TextField
           {...params}
           className="input-base"
-          placeholder="Selecione uma cidade"
+          placeholder="Buscar local"
           slotProps={{
             input: {
               ...params.InputProps,
