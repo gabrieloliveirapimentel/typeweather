@@ -10,9 +10,7 @@ import {
 
 import { CityResponse } from "../@types/types";
 import { theme } from "../theme/global";
-
-import { api } from "../lib/axios";
-import { env } from "../env";
+import { getCities } from "../api/fetch";
 
 interface SelectCityProps {
   goTo: string;
@@ -51,20 +49,10 @@ export default function SelectCity({ goTo }: SelectCityProps) {
     }
 
     debounceTimer.current = setTimeout(async () => {
-      const API_KEY = env.VITE_API_KEY;
-      const API_VERSION = env.VITE_API_VERSION;
       setLoading(true);
 
       try {
-        const response = await api.get(
-          `/locations/${API_VERSION}/cities/autocomplete`,
-          {
-            params: {
-              apikey: API_KEY,
-              q: inputValue,
-            },
-          }
-        );
+        const response = await getCities(inputValue);
         setOptions(response.data);
       } catch (err) {
         console.error("Erro ao buscar cidades:", err);
