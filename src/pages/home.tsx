@@ -20,7 +20,7 @@ export function Home() {
         sx={{
           justifyContent: "center",
           alignItems: "center",
-          height: "80vh",
+          height: "80dvh",
           gap: "56px",
         }}
       >
