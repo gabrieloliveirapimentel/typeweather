@@ -22,36 +22,11 @@ export function CardForecast() {
           Previsão para 5 dias
         </Typography>
         <Stack direction="row">
-          <DayDetail
-            day="Amanhã"
-            icon={1}
-            detail="Céu limpo"
-            temperature={{ min: 20, max: 30 }}
-          />
-          <DayDetail
-            day="Quarta"
-            icon={2}
-            detail="Poucas nuvens"
-            temperature={{ min: 22, max: 28 }}
-          />
-          <DayDetail
-            day="Quinta"
-            icon={3}
-            detail="Nublado"
-            temperature={{ min: 18, max: 25 }}
-          />
-          <DayDetail
-            day="Sexta"
-            icon={4}
-            detail="Chuva"
-            temperature={{ min: 19, max: 26 }}
-          />
-          <DayDetail
-            day="Sábado"
-            icon={2}
-            detail="Poucas nuvens"
-            temperature={{ min: 22, max: 28 }}
-          />
+          <DayDetail day="Amanhã" icon={1} temperature={{ min: 20, max: 30 }} />
+          <DayDetail day="Quarta" icon={1} temperature={{ min: 22, max: 28 }} />
+          <DayDetail day="Quinta" icon={1} temperature={{ min: 18, max: 25 }} />
+          <DayDetail day="Sexta" icon={1} temperature={{ min: 19, max: 26 }} />
+          <DayDetail day="Sábado" icon={1} temperature={{ min: 22, max: 28 }} />
         </Stack>
       </Stack>
     </Card>

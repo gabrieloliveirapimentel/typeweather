@@ -1,0 +1,364 @@
+{
+    "weatherOptions": [
+        {
+            "icon": 1,
+            "iconPath": "/svg/clear_day.svg",
+            "background": "/background/clear_day.png",
+            "descriptionEnUs": "Sunny",
+            "descriptionPtBr": "Ensolarado",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 2,
+            "iconPath": "/svg/clouds_day.svg",
+            "background": "/background/clouds_day.png",
+            "descriptionEnUs": "Mostly Sunny",
+            "descriptionPtBr": "Predominantemente ensolarado",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 3,
+            "iconPath": "/svg/clouds_day.svg",
+            "background": "/background/clouds_day.png",
+            "descriptionEnUs": "Partly Sunny",
+            "descriptionPtBr": "Parcialmente ensolarado",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 4,
+            "iconPath": "/svg/clouds_day.svg",
+            "background": "/background/clouds_day.png",
+            "descriptionEnUs": "Intermittent Clouds",
+            "descriptionPtBr": "Nuvens esparsas",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 5,
+            "iconPath": "/svg/clouds_day.svg",
+            "background": "/background/clouds_day.png",
+            "descriptionEnUs": "Hazy Sunshine",
+            "descriptionPtBr": "Sol com nebulosidade",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 6,
+            "iconPath": "/svg/cloudy_day.svg",
+            "background": "/background/cloudy_day.png",
+            "descriptionEnUs": "Mostly Cloudy",
+            "descriptionPtBr": "Predominantemente nublado",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 7,
+            "iconPath": "/svg/cloudy_day.svg",
+            "background": "/background/cloudy_day.png",
+            "descriptionEnUs": "Cloudy",
+            "descriptionPtBr": "Nublado",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 8,
+            "iconPath": "/svg/cloudy_day.svg",
+            "background": "/background/cloudy_day.png",
+            "descriptionEnUs": "Dreary (Overcast)",
+            "descriptionPtBr": "Nublado",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 11,
+            "iconPath": "/svg/cloudy_day.svg",
+            "background": "/background/cloudy_day.png",
+            "descriptionEnUs": "Will",
+            "descriptionPtBr": "Vento",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 12,
+            "iconPath": "/svg/rain_day.svg",
+            "background": "/background/rain_day.png",
+            "descriptionEnUs": "Showers",
+            "descriptionPtBr": "Pancadas de chuva",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 13,
+            "iconPath": "/svg/rain_day.svg",
+            "background": "/background/rain_day.png",
+            "descriptionEnUs": "Mostly Cloudy w/ Showers",
+            "descriptionPtBr": "Predominantemente nublado, com pancadas de chuva",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 14,
+            "iconPath": "/svg/rain_day.svg",
+            "background": "/background/rain_day.png",
+            "descriptionEnUs": "Partly Sunny w/ Showers",
+            "descriptionPtBr": "Parcialmente aberto, com pancadas de chuva",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 15,
+            "iconPath": "/svg/storm_day.svg",
+            "background": "/background/storm_day.png",
+            "descriptionEnUs": "T-Storms",
+            "descriptionPtBr": "Tempestades",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 16,
+            "iconPath": "/svg/storm_day.svg",
+            "background": "/background/storm_day.png",
+            "descriptionEnUs": "Mostly Cloudy w/ T-Storms",
+            "descriptionPtBr": "Predominantemente nublado, com tempestades",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 17,
+            "iconPath": "/svg/storm_day.svg",
+            "background": "/background/storm_day.png",
+            "descriptionEnUs": "Partly Sunny w/ T-Storms",
+            "descriptionPtBr": "Parcialmente nublado, com tempestades",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 18,
+            "iconPath": "/svg/rain_day.svg",
+            "background": "/background/rain_day.png",
+            "descriptionEnUs": "Rain",
+            "descriptionPtBr": "Chuva",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 19,
+            "iconPath": "/svg/cloudy_day.svg",
+            "background": "/background/cloudy_day.png",
+            "descriptionEnUs": "Flurries",
+            "descriptionPtBr": "Rajadas de vento",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 20,
+            "iconPath": "/svg/cloudy_day.svg",
+            "background": "/background/cloudy_day.png",
+            "descriptionEnUs": "Mostly Cloudy w/ Flurries",
+            "descriptionPtBr": "Predominantemente nublado, com rajadas de vento",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 21,
+            "iconPath": "/svg/cloudy_day.svg",
+            "background": "/background/cloudy_day.png",
+            "descriptionEnUs": "Partly Sunny w/ Flurries",
+            "descriptionPtBr": "Parcialmente nublado, com rajadas de vento",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 22,
+            "iconPath": "/svg/snow_day.svg",
+            "background": "/background/snow_day.png",
+            "descriptionEnUs": "Snow",
+            "descriptionPtBr": "Neve",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 23,
+            "iconPath": "/svg/snow_day.svg",
+            "background": "/background/snow_day.png",
+            "descriptionEnUs": "Mostly Cloudy w/ Snow",
+            "descriptionPtBr": "Predominantemente nublado, com neve",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 24,
+            "iconPath": "/svg/snow_day.svg",
+            "background": "/background/snow_day.png",
+            "descriptionEnUs": "Ice",
+            "descriptionPtBr": "Gelo",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 25,
+            "iconPath": "/svg/snow_day.svg",
+            "background": "/background/snow_day.png",
+            "descriptionEnUs": "Sleet",
+            "descriptionPtBr": "Chuva congelada",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 26,
+            "iconPath": "/svg/snow_day.svg",
+            "background": "/background/snow_day.png",
+            "descriptionEnUs": "Freezing Rain",
+            "descriptionPtBr": "Chuva congelada",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon": 27,
+            "iconPath": "/svg/storm_day.svg",
+            "background": "/background/storm_day.png",
+            "descriptionEnUs": "Rain and Snow",
+            "descriptionPtBr": "Chuva e neve",
+            "isDay": true,
+            "isNight": false
+        },
+        {
+            "icon" : 30,
+            "iconPath": "/svg/clear_day.svg",
+            "background": "/background/clear_day.png",
+            "descriptionEnUs" : "Hot",
+            "descriptionPtBr" : "Quente",
+            "isDay" : true,
+            "isNight" : false
+        },
+        {
+            "icon" : 31,
+            "iconPath": "/svg/clear_day.svg",
+            "background": "/background/clear_day.png",
+            "descriptionEnUs" : "Cold",
+            "descriptionPtBr" : "Frio",
+            "isDay" : true,
+            "isNight" : false
+        },
+        {
+            "icon" : 32,
+            "iconPath": "/svg/cloudy_day.svg",
+            "background": "/background/cloudy_day.png",
+            "descriptionEnUs" : "Windy",
+            "descriptionPtBr" : "Ventoso",
+            "isDay" : true,
+            "isNight" : false
+        },
+        {
+            "icon" : 33,
+            "iconPath": "/svg/clear_night.svg",
+            "background": "/background/clear_night.png",
+            "descriptionEnUs" : "Clear",
+            "descriptionPtBr" : "Céu claro",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon" : 34,
+            "iconPath": "/svg/clouds_night.svg",
+            "background": "/background/clouds_night.png",
+            "descriptionEnUs" : "Mostly Clear",
+            "descriptionPtBr" : "Predominantemente aberto",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 35,
+            "iconPath": "/svg/clouds_night.svg",
+            "background": "/background/clouds_night.png",
+            "descriptionEnUs": "Partly Cloudy",
+            "descriptionPtBr": "Parcialmente nublado",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 36,
+            "iconPath": "/svg/clouds_night.svg",
+            "background": "/background/clouds_night.png",
+            "descriptionEnUs": "Intermittent Clouds",
+            "descriptionPtBr": "Nuvens esparsas",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 37,
+            "iconPath": "/svg/clear_night.svg",
+            "background": "/background/clear_night.png",
+            "descriptionEnUs": "Hazy Moonlight",
+            "descriptionPtBr": "Luz da lua nebulosa",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 38,
+            "iconPath": "/svg/cloudy_night.svg",
+            "background": "/background/cloudy_night.png",
+            "descriptionEnUs": "Mostly Cloudy",
+            "descriptionPtBr": "Predominantemente nublado",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 39,
+            "iconPath": "/svg/rain_night.svg",
+            "background": "/background/rain_night.png",
+            "descriptionEnUs": "Partly Cloudy w/ Showers",
+            "descriptionPtBr": "Parcialmente nublado, com pancadas de chuva",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 40,
+            "iconPath": "/svg/rain_night.svg",
+            "background": "/background/rain_night.png",
+            "descriptionEnUs": "Mostly Cloudy w/ Showers",
+            "descriptionPtBr": "Predominantemente nublado, com pancadas de chuva",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 41,
+            "iconPath": "/svg/storm_night.svg",
+            "background": "/background/storm_night.png",
+            "descriptionEnUs": "Partly Cloudy w/ T-Storms",
+            "descriptionPtBr": "Parcialmente nublado, com tempestades",
+            "isDay": false,
+            "isNight": true
+        }, 
+        {
+            "icon": 42,
+            "iconPath": "/svg/storm_night.svg",
+            "background": "/background/storm_night.png",
+            "descriptionEnUs": "Mostly Cloudy w/ T-Storms",
+            "descriptionPtBr": "Predominantemente nublado, com tempestades",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 43,
+            "iconPath": "/svg/storm_night.svg",
+            "background": "/background/storm_night.png",
+            "descriptionEnUs": "Mostly Cloudy w/ Rain",
+            "descriptionPtBr": "Predominantemente nublado, com rajadas de vento",
+            "isDay": false,
+            "isNight": true
+        },
+        {
+            "icon": 44,
+            "iconPath": "/svg/snow_night.svg",
+            "background": "/background/snow_night.png",
+            "descriptionEnUs": "Mostly Cloudy w/ Snow",
+            "descriptionPtBr": "Predominantemente nublado, com neve",
+            "isDay": false,
+            "isNight": true
+        }
+    ]    
+}

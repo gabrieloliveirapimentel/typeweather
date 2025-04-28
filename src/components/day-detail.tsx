@@ -1,31 +1,19 @@
 import { Stack, Typography } from "@mui/material";
-import clearDay from "../assets/svg/clear_day.svg";
-import cloudsDay from "../assets/svg/clouds_day.svg";
-import cloudyDay from "../assets/svg/cloudy_day.svg";
-import rainDay from "../assets/svg/rain_day.svg";
-import snowDay from "../assets/svg/snow_day.svg";
-import stormDay from "../assets/svg/storm_day.svg";
 import { theme } from "../theme/global";
+
+import { weatherOptions } from "../../weather-data.json";
 
 interface DayDetailProps {
   day: string;
   icon: number;
-  detail: string;
   temperature: {
     min: number;
     max: number;
   };
 }
 
-export function DayDetail({ day, icon, detail, temperature }: DayDetailProps) {
-  const ICON_OPTIONS: Record<number, string> = {
-    1: clearDay,
-    2: cloudsDay,
-    3: cloudyDay,
-    4: rainDay,
-    5: stormDay,
-    6: snowDay,
-  };
+export function DayDetail({ day, icon, temperature }: DayDetailProps) {
+  const weather = weatherOptions.find((option) => option.icon === icon);
 
   return (
     <Stack
@@ -43,7 +31,7 @@ export function DayDetail({ day, icon, detail, temperature }: DayDetailProps) {
         {day}
       </Typography>
       <img
-        src={ICON_OPTIONS[icon]}
+        src={weather?.iconPath}
         alt="weather-icon"
         style={{ width: "100px" }}
       />
@@ -51,10 +39,13 @@ export function DayDetail({ day, icon, detail, temperature }: DayDetailProps) {
         <Typography
           sx={[
             theme.typography.textSm,
-            { color: theme.palette.gray["gray-200"] },
+            {
+              color: theme.palette.gray["gray-200"],
+              textAlign: "center",
+            },
           ]}
         >
-          {detail}
+          {weather?.descriptionPtBr}
         </Typography>
         <Stack direction="row" gap={1}>
           <Typography
@@ -63,7 +54,7 @@ export function DayDetail({ day, icon, detail, temperature }: DayDetailProps) {
               { color: theme.palette.gray["gray-100"] },
             ]}
           >
-            {temperature.min}ºC
+            {temperature.min}ºC /
           </Typography>
           <Typography
             sx={[
