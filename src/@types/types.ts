@@ -17,6 +17,7 @@ export interface CityResponse {
 export interface City {
   id: string;
   nome: string;
+  uf?: string;
   state?: string;
   country: string;
 }
@@ -68,15 +69,15 @@ export interface ConditionsResponse {
   RelativeHumidity: number
   Temperature: ComponentProps
   TemperatureSummary: {
-    Past6Hours: {
+    Past6HourRange: {
       Minimum: ComponentProps
       Maximum: ComponentProps
     }
-    Past12Hours: {
+    Past12HoursRange: {
       Minimum: ComponentProps
       Maximum: ComponentProps
     }
-    Past24Hours: {
+    Past24HoursRange: {
       Minimum: ComponentProps
       Maximum: ComponentProps
     }
@@ -115,7 +116,7 @@ export interface ConditionsProps {
   RelativeHumidity: number
   Temperature: ComponentProps
   TemperatureSummary: {
-    Past6Hours: {
+    Past6HourRange: {
       Minimum: ComponentProps
       Maximum: ComponentProps
     }
