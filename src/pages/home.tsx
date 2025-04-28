@@ -26,6 +26,7 @@ export function Home() {
       >
         <Stack gap={0.5}>
           <Typography
+            component="span"
             sx={[
               theme.typography.headingLg,
               { display: "flex", flexDirection: "row" },
