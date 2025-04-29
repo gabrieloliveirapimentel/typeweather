@@ -1,8 +1,30 @@
 import { Card, Stack, Typography } from "@mui/material";
 import { DayDetail } from "./day-detail";
 import { theme } from "../theme/global";
+import { ForecastProps, FormattedDayDetail } from "../@types/types";
+import { convertToCelsius, formatForecastDate } from "../lib/utils";
 
-export function CardForecast() {
+interface CardForecastProps {
+  data: ForecastProps[];
+}
+
+export function CardForecast({ data }: CardForecastProps) {
+  const days: FormattedDayDetail[] = data.map((day) => ({
+    day: day.Date ? formatForecastDate(day.Date) : "",
+    icon: day.Day.Icon ? day.Day.Icon : 1,
+    description: day.Day?.ShortPhrase,
+    temperature: {
+      min: day.Temperature.Minimum.Value
+        ? convertToCelsius(day.Temperature.Minimum.Value)
+        : 0,
+      max: day.Temperature.Maximum.Value
+        ? convertToCelsius(day.Temperature.Maximum.Value)
+        : 0,
+    },
+  }));
+
+  const countDays = days.length;
+
   return (
     <Card
       sx={{
@@ -19,14 +41,21 @@ export function CardForecast() {
             { color: theme.palette.gray["gray-200"], marginBottom: "20px" },
           ]}
         >
-          Previsão para 5 dias
+          Previsão para {countDays} dias
         </Typography>
-        <Stack direction="row">
-          <DayDetail day="Amanhã" icon={1} temperature={{ min: 20, max: 30 }} />
-          <DayDetail day="Quarta" icon={1} temperature={{ min: 22, max: 28 }} />
-          <DayDetail day="Quinta" icon={1} temperature={{ min: 18, max: 25 }} />
-          <DayDetail day="Sexta" icon={1} temperature={{ min: 19, max: 26 }} />
-          <DayDetail day="Sábado" icon={1} temperature={{ min: 22, max: 28 }} />
+        <Stack direction="row" alignItems="center" gap={1}>
+          {days.map((day, index) => (
+            <DayDetail
+              key={index}
+              day={day.day}
+              icon={day.icon}
+              description={day.description}
+              temperature={{
+                min: day.temperature.min,
+                max: day.temperature.max,
+              }}
+            />
+          ))}
         </Stack>
       </Stack>
     </Card>

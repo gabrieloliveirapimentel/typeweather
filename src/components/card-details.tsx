@@ -7,8 +7,33 @@ import {
   ThermometerSimple,
   Wind,
 } from "@phosphor-icons/react";
+import { ConditionsProps, FormattedDailyProps } from "../@types/types";
 
-export function CardDetails() {
+interface CardDetailsProps {
+  data: ConditionsProps;
+}
+
+export function CardDetails({ data }: CardDetailsProps) {
+  const details: FormattedDailyProps = {
+    feelTemperature: data.RealFeelTemperature.Metric.Value
+      ? `${data.RealFeelTemperature.Metric.Value}ºC`
+      : "",
+    precipitation: {
+      value: data.PrecipitationSummary.Precipitation.Metric.Value
+        ? data.PrecipitationSummary.Precipitation.Metric.Value
+        : 0,
+      unit: data.PrecipitationSummary.Precipitation.Metric.Unit
+        ? data.PrecipitationSummary.Precipitation.Metric.Unit
+        : "",
+    },
+    wind: {
+      value: data.Wind.Speed.Metric.Value ? data.Wind.Speed.Metric.Value : 0,
+      unit: data.Wind.Speed.Metric.Unit ? data.Wind.Speed.Metric.Unit : "",
+    },
+    humidity: data.RelativeHumidity ? `${data.RelativeHumidity}%` : "",
+    uvIndex: data.UVIndex ? data.UVIndex : 0,
+  };
+
   return (
     <Card
       sx={{
@@ -49,7 +74,9 @@ export function CardDetails() {
               Sensação térmica
             </Typography>
           </Stack>
-          <Typography sx={theme.typography.headingSm}>26ºC</Typography>
+          <Typography sx={theme.typography.headingSm}>
+            {details.feelTemperature}
+          </Typography>
         </Stack>
         <Stack
           direction="row"
@@ -67,10 +94,13 @@ export function CardDetails() {
                 { color: theme.palette.gray["gray-200"] },
               ]}
             >
-              Probabilidade de chuva
+              Precipitação
             </Typography>
           </Stack>
-          <Typography sx={theme.typography.headingSm}>0%</Typography>
+          <Typography sx={theme.typography.headingSm}>
+            {details.precipitation.value}
+            {details.precipitation.unit}
+          </Typography>
         </Stack>
         <Stack
           direction="row"
@@ -91,7 +121,10 @@ export function CardDetails() {
               Velocidade do vento
             </Typography>
           </Stack>
-          <Typography sx={theme.typography.headingSm}>8 km/h</Typography>
+          <Typography sx={theme.typography.headingSm}>
+            {details.wind.value}
+            {details.wind.unit}
+          </Typography>
         </Stack>
         <Stack
           direction="row"
@@ -112,7 +145,9 @@ export function CardDetails() {
               Umidade do ar
             </Typography>
           </Stack>
-          <Typography sx={theme.typography.headingSm}>40%</Typography>
+          <Typography sx={theme.typography.headingSm}>
+            {details.humidity}
+          </Typography>
         </Stack>
         <Stack
           direction="row"
@@ -130,7 +165,9 @@ export function CardDetails() {
               Índice UV
             </Typography>
           </Stack>
-          <Typography sx={theme.typography.headingSm}>5</Typography>
+          <Typography sx={theme.typography.headingSm}>
+            {details.uvIndex}
+          </Typography>
         </Stack>
       </Stack>
     </Card>
