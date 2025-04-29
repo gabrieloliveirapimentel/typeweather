@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, isToday, isTomorrow, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 export function formatExtensionDate(date: string){
@@ -15,5 +15,23 @@ export function formatTime(date: string) {
     });
 
     return formattedTime
+}
+
+export function formatForecastDate(date: string) {
+    const dateFormatted = parseISO(date);
+
+    if(isToday(date)) {
+        return "hoje"
+    }
+
+    if(isTomorrow(date)) {
+        return "amanhã"
+    }
+
+    return format(dateFormatted, "EEEE", { locale: ptBR})
+}
+
+export function convertToCelsius(temperature: number) {
+    return Math.round((temperature - 32) * (5 / 9));
 }
 
