@@ -1,6 +1,13 @@
 import { useLocation } from "react-router";
-import { City, CityResponse, ConditionsProps } from "../@types/types";
-import { Box, Card, Stack, Typography } from "@mui/material";
+import {
+  City,
+  CityResponse,
+  ConditionsProps,
+  ConditionsResponse,
+  ForecastProps,
+  ForecastResponse,
+} from "../@types/types";
+import { Card, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getCurrentConditions, getFiveDailyForecast } from "../api/fetch";
 import { theme } from "../theme/global";
@@ -22,60 +29,51 @@ export function Weather() {
   };
 
   const [conditions, setConditions] = useState<ConditionsProps>();
-  //const [forecast, setForecast] = useState<any>();
+  const [forecast, setForecast] = useState<ForecastProps[]>([]);
 
   useEffect(() => {
     async function fetchData() {
-      const conditionsResponse = await getCurrentConditions(data.Key);
+      const conditions: ConditionsResponse[] = await getCurrentConditions(
+        data.Key
+      );
+      const forecast: ForecastResponse = await getFiveDailyForecast(data.Key);
 
-      console.log(conditionsResponse);
-      //const forecast = await getFiveDailyForecast(data.Key);
-
-      setConditions(conditionsResponse[0]);
-      //setForecast(forecast.DailyForecasts);
+      setConditions(conditions[0]);
+      setForecast(forecast.DailyForecasts);
     }
     fetchData();
   }, [data]);
 
-  if (!conditions) {
+  if (!conditions || !forecast) {
     return <div>Loading...</div>;
   }
 
   return (
-    <Stack direction="row" gap={2} sx={{ padding: "24px" }}>
+    <Stack
+      gap={2}
+      direction={{ xs: "column", md: "row" }}
+      sx={{ padding: "12px" }}
+      alignItems="center"
+      justifyContent="center"
+    >
       <Stack>
         <Card
           sx={{
             backgroundColor: theme.palette.gray["gray-800"],
-            width: "814px",
-            padding: "16px",
+            padding: "24px",
             boxShadow: "none",
             borderRadius: "8px",
           }}
         >
           <Stack gap={2}>
             <CardHeading />
-            <CardCity
-              city={city.nome}
-              state={city.uf}
-              country={city.country}
-              datetime={conditions.LocalObservationDateTime}
-              temperature={{
-                min: conditions.TemperatureSummary.Past6HourRange.Maximum.Metric
-                  .Value,
-                max: conditions.TemperatureSummary.Past6HourRange.Minimum.Metric
-                  .Value,
-                current: conditions.Temperature.Metric.Value,
-              }}
-              isDayTime={conditions.IsDayTime}
-              icon={conditions.WeatherIcon}
-            />
+            <CardCity cityData={city} conditionData={conditions} />
           </Stack>
         </Card>
       </Stack>
       <Stack gap={2}>
-        <CardDetails />
-        <CardForecast />
+        <CardDetails data={conditions} />
+        <CardForecast data={forecast} />
       </Stack>
     </Stack>
   );

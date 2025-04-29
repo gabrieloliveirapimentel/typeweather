@@ -1,7 +1,7 @@
 import { Container, Stack, Typography } from "@mui/material";
 import SelectCity from "../components/select-city";
 
-import logoImg from "../assets/logo.svg";
+import logoImg from "../assets/logo-ext.svg";
 import { theme } from "../theme/global";
 
 export function Home() {
@@ -10,21 +10,19 @@ export function Home() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "space-between",
         alignItems: "center",
         padding: "32px",
+        gap: "160px",
       }}
     >
       <img src={logoImg} alt="Logo" />
       <Stack
         sx={{
-          justifyContent: "center",
-          alignItems: "center",
-          height: "80dvh",
           gap: "56px",
         }}
       >
-        <Stack gap={0.5}>
+        <Stack gap={0.5} alignItems="center">
           <Typography
             component="span"
             sx={[
@@ -54,6 +52,7 @@ export function Home() {
 
         <SelectCity goTo="/weather" />
       </Stack>
+      <Stack />
     </Container>
   );
 }
