@@ -23,47 +23,47 @@ const base = {
   typography: {
     fontFamily: `'Nunito', sans-serif`,
     headingHg: {
-      fontSize: "96px",
+      fontSize: "72px",
       fontWeight: 900,
       lineHeight: "100%",
     },
     headingXl: {
-      fontSize: "48px",
+      fontSize: "32px",
       fontWeight: 900,
       lineHeight: "120%",
     },
     headingLg: {
-      fontSize: "32px",
+      fontSize: "30px",
       fontWeight: 700,
       lineHeight: "140%",
     },
     headingMd: {
-      fontSize: "20px",
+      fontSize: "14px",
       fontWeight: 700,
       lineHeight: "140%",
     },
     headingSm: {
-      fontSize: "16px",
+      fontSize: "14px",
       fontWeight: 700,
       lineHeight: "140%",
     },
     headingXs: {
-      fontSize: "14px",
+      fontSize: "12px",
       fontWeight: 700,
       lineHeight: "140%",
     },
     textLg: {
-      fontSize: "20px",
-      fontWeight: 400,
-      lineHeight: "140%",
-    },
-    textMd: {
       fontSize: "16px",
       fontWeight: 400,
       lineHeight: "140%",
     },
-    textSm: {
+    textMd: {
       fontSize: "14px",
+      fontWeight: 400,
+      lineHeight: "140%",
+    },
+    textSm: {
+      fontSize: "12px",
       fontWeight: 400,
       lineHeight: "140%",
     },
