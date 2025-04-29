@@ -1,54 +1,31 @@
-# React + TypeScript + Vite
+<h3 align="center"> 
+	Typeweather
+</h3>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido para replicar um desafio do curso Explorer da Rocketseat, com funcionalidades extras com uso do React, para realizar para obter os dados climaticos de uma cidade pesquisada. 
 
-Currently, two official plugins are available:
+Neste projeto, foi utilizado a API da [API da AccuWeather](https://developer.accuweather.com/) para mostrar os dados reais e atualizados de uma cidade informada na tela inicial da aplicação.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto foi desenvolvido com o uso do <b>Material UI</b> para replicar o protótipo da interface de usuário exatamente como mostrado no Figma, React Router para troca de tela e Axios para consumo dos dados da API. 
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas
+Foi utilizado para desenvolver esse projeto:
+- <b>Material UI</b>: para interface gráfica;
+- <b>React Router</b>: para gerenciamento de tela;
+- <b>Axios</b>: para consumir os dados reais da API;
+- <b>TypeScript</b>: Para garantir tipagem estática de todo código.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Instruções para **.env**
+Para rodar essa aplicação e consumir dados reais, é necessário criar uma chave para consumir a **API** da **AccuWeather**. Com uma chave criada, atualize o arquivo ``.env`` com seus dados:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+VITE_API_KEY=ACCUWEATHER_API_KEY
+VITE_API_URL=AACUWEATHER_API_URL
+VITE_API_VERSION=ACCUWEATHER_API_VERSION
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Após isso, basta fazer a instalação dos pacotes e rodar a aplicação.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Capa do projeto
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+![cover](cover.png?style=flat)
