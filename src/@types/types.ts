@@ -135,3 +135,198 @@ export interface ConditionsProps {
   }
 }
 
+
+export interface DayProps {
+  CloudCover: number
+  Evapotranspiration: ComponentProps
+  HasPrecipitation: boolean
+  HoursOfIce: number
+  HoursOfPrecipitation: number
+  HoursOfRain: number
+  HoursOfSnow: number
+  Ice: ComponentProps
+  IceProbability: number
+  Icon: number
+  IconPhrase: string
+  LongPhrase: string
+  PrecipitationProbability: number
+  Rain: ComponentProps
+  RainProbability: number
+  RelativeHumidity: {
+    Minimum: number
+    Maximum: number
+    Average: number
+  }
+  ShortPhrase: string
+  Snow: ComponentProps
+  SnowProbability: number
+  SolarIrradiance: ComponentProps
+  ThunderstormProbability: number
+  TotalLiquid: ComponentProps
+  WetBulbGlobeTemperature: {
+    Average: ComponentProps
+    Maximum: ComponentProps
+    Minimum: ComponentProps
+  }
+  WetBulbTemperature: {
+    Average: ComponentProps
+    Maximum: ComponentProps
+    Minimum: ComponentProps
+  }
+  Wind: {
+    Direction: {
+      Degrees: number
+      English: string
+      Localized: string
+    }
+    Speed: ComponentProps
+  }
+  WindGust: {
+    Direction: {
+      Degrees: number
+      English: string
+      Localized: string
+    }
+    Speed: ComponentProps
+  }
+}
+
+export interface DailyForecasts {
+  AirAndPollen: {
+    Name: string
+    Value: number
+    Category: string
+    CategoryValue: number
+    Type: string
+  }[]
+  Date: string
+  Day: DayProps
+  DegreeDaySummary: {
+    Cooling: ComponentProps
+    Heating: ComponentProps
+  }
+  EpochDateTime: number
+  HoursOfSun: number
+  Link: string
+  MobileLink: string
+  Moon: {
+    Age: number
+    EpochRise: number
+    EpochSet: number
+    Phase: string
+    Rise: string
+    Set: string
+  }
+  Night: DayProps
+  RealFeelTemperature: {
+    Maximum: ComponentProps
+    Minimum: ComponentProps
+  }
+  RealFeelTemperatureShade: {
+    Maximum: ComponentProps
+    Minimum: ComponentProps
+  }
+  Sources: string[]
+  Sun: {
+    EpochRise: number
+    EpochSet: number
+    Rise: string
+    Set: string
+  }
+  Temperature: {
+    Maximum: {
+      Value: number
+      Unit: string
+      UnitType: number
+    }
+    Minimum: {
+      Value: number
+      Unit: string
+      UnitType: number
+    }
+  }
+}
+
+export interface ForecastResponse {
+  Headline: {
+    Category: string
+    EffectiveDate: string
+    EffectiveEpochDate: number
+    EndDate: string
+    EndEpochDate: number
+    Link: string
+    MobileLink: string
+    Severity: number
+    Text: string
+  }
+  DailyForecasts: DailyForecasts[]
+}
+
+export interface ForecastProps {
+  Date: string
+  Day: {
+    Icon: number
+    IconPhrase: string
+    ShortPhrase: string
+  }
+  Temperature: {
+    Maximum: {
+      Value: number
+      Unit: string
+      UnitType: number
+    }
+    Minimum: {
+      Value: number
+      Unit: string
+      UnitType: number
+    }
+  }
+}
+
+export interface FormattedForecast {
+  date: string;
+  icon: number;
+  description?: string;
+  temperature: {
+    min: number;
+    max: number;
+  };
+}
+
+export interface FormattedDailyProps {
+  feelTemperature: string;
+  precipitation: {
+    value: number;
+    unit: string;
+  }
+  wind: {
+    value: number;
+    unit: string;
+  }
+  humidity: string;
+  uvIndex: number;
+}
+
+export interface FormattedDayDetail {
+  day: string;
+  icon: number;
+  description?: string;
+  temperature: {
+    min: number;
+    max: number;
+  }
+}
+
+export interface FormattedCityDetailsProps {
+  name: string;
+  state?: string;
+  country?: string;
+  datetime: string;
+  temperature: {
+    min: number;
+    max: number;
+    current: number;
+  };
+  isDayTime: boolean;
+  icon: number;
+}
