@@ -7,7 +7,7 @@ import {
   ForecastProps,
   ForecastResponse,
 } from "../@types/types";
-import { Card, Stack } from "@mui/material";
+import { Card, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getCurrentConditions, getFiveDailyForecast } from "../api/fetch";
 import { theme } from "../theme/global";
@@ -45,7 +45,11 @@ export function Weather() {
   }, [data]);
 
   if (!conditions || !forecast) {
-    return <div>Loading...</div>;
+    return (
+      <Stack sx={{ padding: "32px" }}>
+        <Typography>Carregando...</Typography>
+      </Stack>
+    );
   }
 
   return (
